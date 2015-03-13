@@ -1,0 +1,566 @@
+/* always be prepared */
+.ninja { color: black; visibility: hidden; }
+
+html {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  background: url(../img/bg.png) no-repeat; 
+  background-size: cover;
+  overflow: hidden;
+}
+
+html .addToHomeClose { display: none; }
+
+body { xzoom: 3;}
+.tile {opacity: .05; filter:alpha(opacity:5); }
+
+.blad {
+  background-repeat: no-repeat;
+  width: 260px; height: 200px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 9999;
+  -webkit-transition: all 5s ease-in-out;
+  -moz-transition: all 5s ease-in-out;
+  -o-transition: all 5s ease-in-out;
+  -ms-transition: all 5s ease-in-out;
+}
+#addToHomeScreen {
+  z-index: 999999;
+}
+  .blad.blad-top-left { left: 0; top: 0; background-image: url(../img/blad-top-left.png); background-position: left top; }
+  .blad.blad-top-right { right: 0; top: 0; background-image: url(../img/blad-top-right.png); background-position: right top; }
+  .blad.blad-bottom-left { left: 0; bottom: 0; background-image: url(../img/blad-bottom-left.png); background-position: left bottom; }
+  .blad.blad-bottom-right { right: 0; bottom: 0; background-image: url(../img/blad-bottom-right.png); background-position: right bottom; }
+
+.iphone .blad { zoom: .5; }
+
+  .game .blad-top-left { -webkit-transform: translate3d(-260px, -200px, 0); -moz-transform: translate3d(-260px, -200px, 0); -o-transform: translate3d(-260px, -200px, 0); -ms-transform: translate3d(-260px, -200px, 0); }
+  .game .blad-top-right { -webkit-transform: translate3d(260px, -200px, 0); -moz-transform: translate3d(260px, -200px, 0); -o-transform: translate3d(260px, -200px, 0); -ms-transform: translate3d(260px, -200px, 0); }
+  .game .blad-bottom-left { -webkit-transform: translate3d(-260px, 200px, 0); -moz-transform: translate3d(-260px, 200px, 0); -o-transform: translate3d(-260px, 200px, 0); -ms-transform: translate3d(-260px, 200px, 0); }
+  .game .blad-bottom-right { -webkit-transform: translate3d(260px, 200px, 0); -moz-transform: translate3d(260px, 200px, 0); -o-transform: translate3d(260px, 200px, 0); -ms-transform: translate3d(260px, 200px, 0); }
+
+#splash {
+  display: none;
+}
+.splash #splash {
+  display: block;
+  position: relative;
+  width: 1024px; height: 748px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.splash #game-and-watch,
+.splash #controls {
+  display: none;
+}
+#title {
+  position: absolute;
+  left: 132px; top: 80px;
+  z-index: 3;
+}
+#image {
+  position: absolute;
+  left: 180px; top: 220px;
+  z-index: 3;
+}
+#shadow {
+  width: 589px; height: 135px;
+  background: url(../img/shadow.png) no-repeat;
+  position: absolute;
+  z-index: 2;
+  left: 223px;
+  top: 552px;
+}
+#description {
+  position: absolute;
+  width: 1024px;
+  font-family: 'Marker Felt', 'Verdana';
+  color: #ddd; 
+  font-size: 24px;
+  text-align: center;
+  top: 600px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
+#description a {
+  color: inherit;
+  text-decoration: none;
+}
+/*
+#upper-screen .blueprint {
+  width: 552px; height: 360px;
+  background: url(../img/blueprint-upper.png) no-repeat;
+  opacity: .3; filter:alpha(opacity:3); 
+  left: -2px; top: 1px;
+  display: none;
+}
+#lower-screen .blueprint {
+  width: 552px; height: 360px;
+  background: url(../img/blueprint-lower.png) no-repeat;
+  opacity: .2; filter:alpha(opacity:3); 
+  left: -1px; top: 0px;
+  display: none;
+}*/
+/* end of blueprints */
+
+html {
+  padding: 0; margin: 0;
+}
+body {
+  padding: 0; margin: 0;
+  text-align: center;
+}
+#game-and-watch {
+  position: relative;
+  width: 1024px; height: 748px;
+  margin: 0 auto;
+  background: url(../img/ipad.png) no-repeat;
+}
+.ipad #game-and-watch {
+  border-top: solid #000 20px;
+  top: 0px !important;
+  margin-top: 0px !important;
+}
+.desktop #game-and-watch {
+  border: solid 8px #600000;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+  margin: 0 auto;
+}
+#game-and-watch div {
+  position: absolute;
+}
+#upper-screen {
+  left: 236px; top: 8px;
+  width: 552px; height: 360px;
+}
+#lower-screen {
+  left: 236px; top: 380px;
+  width: 552px; height: 360px;
+}
+.tile {
+  position: absolute;
+  width: 70px; height: 60px;
+  overflow: hidden;
+  background: url(../img/tiles.png) no-repeat;
+}
+#life-1 { background-position: 0 0; left: 54px; top: 301px; }
+#life-2 { background-position: -70px 0; left: 119px; top: 301px; }
+#life-3 { background-position: -140px 0; left: 187px; top: 302px; }
+
+#junior-1 { background-position: -210px 0; left: 56px; top: 228px; }
+#junior-2 { background-position: -280px 0; left: 140px; top: 229px; }
+#junior-3 { background-position: -350px 0; left: 219px; top: 230px; width: 80px; }
+#junior-4 { background-position: -480px 0; left: 297px; top: 228px; width: 80px; }
+#junior-5 { background-position: -560px 0; left: 385px; top: 227px; }
+#junior-6 { background-position: -630px 0; left: 383px; top: 171px; }
+#junior-7 { background-position: -700px 0; left: 407px; top: 106px; }
+#junior-8 { background-position: -770px 0; left: 335px; top: 104px; }
+#junior-9 { background-position: 0 -60px; left: 251px; top: 104px; }
+#junior-10 { background-position: -70px -60px; left: 169px; top: 107px;}
+#junior-11 { background-position: -140px -60px; left: 79px; top: 104px; }
+#junior-12 { background-position: -210px -60px; left: 71px; top: 50px; }
+
+#junior-1-2 { background-position: -280px -60px; left: 57px; top: 175px;}
+#junior-2-2 { background-position: -350px -60px; left: 137px; top: 174px; }
+#junior-3-2 { background-position: -420px -60px; left: 221px; top: 176px; width: 80px; }
+#junior-4-2 { background-position: -560px -60px; left: 309px; top: 180px;}
+#junior-8-2 { background-position: -630px -60px; left: 338px; top: 53px; }
+#junior-9-2 { background-position: -700px -60px; left: 256px; top: 50px; }
+#junior-10-2 { background-position: -770px -60px; left: 166px; top: 50px; width: 80px; }
+
+#snapjaw-1-1 { background-position: -420px -120px; left: 484px; top: 237px; }
+#snapjaw-1-2 { background-position: -350px -120px; left: 435px; top: 240px; }
+#snapjaw-1-3 { background-position: -280px -120px; left: 350px; top: 237px; }
+#snapjaw-1-4 { background-position: -210px -120px; left: 266px; top: 240px; }
+#snapjaw-1-5 { background-position: -140px -120px; left: 186px; top: 238px; }
+#snapjaw-1-6 { background-position: -70px -120px; left: 100px; top: 238px; }
+#snapjaw-1-7 { background-position: 0 -120px; left: 10px; top: 233px; }
+
+#spark-1-1 { background-position: 0 -180px; left: 2px; top: 104px;}
+#spark-1-2 { background-position: -770px -120px; left: 63px; top: 128px;}
+#spark-1-3 { background-position: -700px -120px; left: 142px; top: 131px;}
+#spark-1-4 { background-position: -630px -120px; left: 225px; top: 129px;}
+#spark-1-5 { background-position: -560px -120px; left: 303px; top: 130px;}
+#spark-1-6 { background-position: -770px -180px; left: 381px; top: 134px;}
+#spark-1-7 { background-position: -490px -120px; left: 457px; top: 127px;}
+
+#spark-2-1 { background-position: -350px -180px; left: 423px; top: 7px;}
+#spark-2-2 { background-position: -280px -180px; left: 346px; top: 9px;}
+#spark-2-3 { background-position: -210px -180px; left: 258px; top: 5px;}
+#spark-2-4 { background-position: -140px -180px; left: 170px; top: 6px;}
+#spark-2-5 { background-position: -70px -180px; left: 74px; top: 2px; }
+
+#junior-13 { background-position: 0 -240px; left: 48px; top: 272px; height: 65px; }
+#junior-14 { background-position: -70px -240px; left: 132px; top: 276px; }
+#junior-15 { background-position: -140px -240px; left: 215px; top: 276px;}
+#junior-16 { background-position: -210px -240px; left: 294px; top: 274px;}
+#junior-17 { background-position: -280px -240px; left: 380px; top: 278px; }
+
+#junior-13-2 { background-position: -350px -240px; left: 46px; top: 217px; }
+#junior-14-2 { background-position: -420px -240px; left: 122px; top: 223px; }
+#junior-15-2 { background-position: -490px -240px; left: 210px; top: 226px;}
+#junior-16-2 { background-position: -560px -240px; left: 291px; top: 218px; }
+#junior-17-2 { background-position: -630px -240px; left: 374px; top: 222px; height: 63px;}
+
+#junior-14-3 { background-position: -700px -240px; left: 128px; top: 170px; }
+#junior-15-3 { background-position: -770px -240px; left: 212px; top: 169px;}
+#junior-16-3 { background-position: -70px -300px; left: 294px; top: 165px;}
+#junior-17-3 { background-position: -140px -300px; left: 379px; top: 167px;}
+
+#junior-14-4 { background-position: -210px -300px; left: 132px; top: 112px;}
+#junior-15-4 { background-position: -280px -300px; left: 211px; top: 111px;}
+#junior-16-4 { background-position: -350px -300px; left: 294px; top: 111px;}
+#junior-17-4 { background-position: -420px -300px; left: 377px; top: 113px;}
+
+#snapjaw-2-1 { background-position: -70px -360px; left: 473px; top: 296px;}
+#snapjaw-2-2 { background-position: 0 -360px; left: 415px; top: 297px;}
+#snapjaw-2-3 { background-position: -770px -300px; left: 336px; top: 294px;}
+#snapjaw-2-4 { background-position: -700px -300px; left: 255px; top: 294px;}
+#snapjaw-2-5 { background-position: -630px -315px; left: 171px; top: 310px;}
+#snapjaw-2-6 { background-position: -560px -300px; left: 93px; top: 296px; }
+#snapjaw-2-7 { background-position: -490px -300px; left: -4px; top: 295px;}
+
+#bird-1 { background-position: -140px -360px; left: 20px; top: 96px;}
+#bird-2 { background-position: -210px -360px; left: 90px; top: 116px;}
+#bird-3 { background-position: -280px -360px; left: 178px; top: 110px;}
+#bird-4 { background-position: -350px -360px; left: 253px; top: 116px;}
+#bird-5 { background-position: -420px -367px; left: 340px; top: 117px;}
+#bird-6 { background-position: -490px -360px; left: 418px; top: 116px;}
+#bird-7 { background-position: -560px -360px; left: 423px; top: 157px;}
+#bird-8 { background-position: -630px -360px; left: 337px; top: 169px;}
+#bird-9 { background-position: -700px -360px; left: 252px; top: 170px;}
+#bird-10 { background-position: -770px -360px; left: 167px; top: 173px;}
+#bird-11 { background-position: 0 -420px; left: 92px; top: 171px;}
+#bird-12 { background-position: -70px -420px; left: 95px; top: 203px;}
+#bird-13 { background-position: -140px -420px; left: 179px; top: 223px;}
+#bird-14 { background-position: -210px -420px; left: 256px; top: 223px;}
+#bird-15 { background-position: -280px -420px; left: 337px; top: 221px;}
+#bird-16 { background-position: -350px -420px; left: 420px; top: 228px;}
+
+#lock-1 { background-position: -420px -420px; left: 122px; top: 28px; width:140px; }
+#lock-2 { background-position: -560px -420px; left: 199px; top: 28px;}
+#lock-3 { background-position: -630px -420px; left: 329px; top: 28px;}
+#lock-4 { background-position: -700px -420px; left: 345px; top: 24px;width:140px;}
+
+#kong-1 { background-position: 0px -480px; left: 225px; top: -1px;width:133px; height: 90px; }
+#kong-2 { background-position: -420px -482px; left: 394px; top: 4px;width:160px; height: 110px; }
+#kong-3 { background-position: -576px -480px; left: 459px; top: 142px;width:90px; height: 145px; }
+
+#key-1 { background-position: -490px -180px; left: 23px; top: 150px;}
+#key-2 { background-position: -420px -180px; left: 28px; top: 62px;}
+#key-3 { background-position: -560px -180px; left: 15px; top: 187px;}
+#key-4 { background-position: -640px -180px; left: 57px; top: 147px;}
+#key-5 { background-position: -140px -480px; left: 135px; top: 67px;}
+#key-6 { background-position: -210px -480px; left: 215px; top: 65px;}
+#key-7 { background-position: -280px -480px; left: 306px; top: 65px;}
+#key-8 { background-position: -350px -480px; left: 392px; top: 66px;}
+
+#hand-1 { background-position: -700px -180px; left: 22px; top: 228px; height: 30px;}
+#hand-2 { background-position: -700px -210px; left: 47px; top: 198px; height: 30px;}
+
+#mario { background-position: -700px -480px; left: 25px; top: 19px; height: 80px;}
+
+.digit { width: 31px; height: 44px; top: 308px; background-position: -4px -579px; }
+.digit-0 { background-position: -4px -579px; }
+.digit-1 { background-position: -34px -579px; }
+.digit-2 { background-position: -64px -579px; }
+.digit-3 { background-position: -94px -579px; }
+.digit-4 { background-position: -124px -579px; }
+.digit-5 { background-position: -154px -579px; }
+.digit-6 { background-position: -184px -579px; }
+.digit-7 { background-position: -214px -579px; }
+.digit-8 { background-position: -244px -579px; }
+.digit-9 { background-position: -274px -579px; }
+#digit-1000 { left: 363px; }
+#digit-100 { left: 400px; }
+#digit-10 { left: 452px; }
+#digit-1 { left: 489px; }
+
+#controls {
+  position: relative;
+  z-index: 100;
+  width: 1024px; height: 0px;
+  margin: 0 auto;
+}
+#controller { 
+  position: absolute;
+  width: 138px; height: 138px;
+  left: 46px; top: 535px;
+}
+#controller-image {
+  position: absolute;
+  width: 138px; height: 138px;
+  left: 0px; top: 0px;
+  overflow: hidden;
+  background: url(../img/controller.png) no-repeat;
+}
+.left #controller-image { background-position: -137px 0;}
+.right #controller-image { background-position: -274px 0;}
+.up #controller-image { background-position: -411px 0;}
+.down #controller-image { background-position: -548px 0;}
+
+.touch-area {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+#controller .touch-area {
+}
+#touch-area-up {
+  width: 80px; height: 80px;
+  left: 29px; top: -25px;
+  background: transparent;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+}
+#touch-area-down {
+  width: 80px; height: 80px;
+  left: 29px; top: 88px;
+  background: transparent;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+}
+#touch-area-left {
+  width: 80px; height: 80px;
+  left: -27px; top: 31px;
+  background: transparent;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+}
+#touch-area-right {
+  width: 80px; height: 80px;
+  left: 85px; top: 31px;
+  background: transparent;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+}
+#jump { 
+  width: 103px; height: 103px;
+  left: 860px; top: 550px;
+  background: url(../img/jump.png) no-repeat;
+}
+#start { 
+  width: 73px; height: 73px;
+  left: 888px; top: 397px;
+  background: url(../img/start.png) no-repeat;
+}
+
+/* show hand 1 when junior 13 is jumping */
+.junior-13-2 #hand-1 { opacity: 1; filter:alpha(opacity:100); }
+/* do not show hand 1 and show hand 2 when key is at position 4 and junior 13 is jumping */
+.key-4.junior-13-2 #hand-1 { opacity: .05; filter:alpha(opacity:5); }
+.key-4.junior-13-2 #hand-2 { opacity: 1; filter:alpha(opacity:100); }
+
+/* flash the initial spark-1 and spark-2 every 2nd cycle */
+.spark-1-1.cycle-2-1 #spark-1-1 { opacity:.6; filter:alpha(opacity:60); }
+.spark-2-1.cycle-2-1 #spark-2-1 { opacity:.6; filter:alpha(opacity:60); }
+
+/* flash key */
+.tick-1.unlocking-0.key-1 #key-1,
+.tick-1.unlocking-0.key-3 #key-3,
+.tick-1.unlocking-0.key-5 #key-5,
+.tick-1.unlocking-0.key-6 #key-6,
+.tick-1.unlocking-0.key-7 #key-7,
+.tick-1.unlocking-0.key-8 #key-8 { opacity: .05; filter:alpha(opacity:5); }
+
+/* not hide key when jumping and throwing */
+.unlocking-0.key-1.junior-1-2 #key-1,
+.unlocking-0.key-3.junior-13-2 #key-3 { opacity: 1 !important; filter:alpha(opacity:100) !important; }
+
+.cycle-5-1.died div.junior { opacity: .05 !important; filter:alpha(opacity:5) !important; }
+.cycle-5-2.died div.junior { opacity: .05 !important; filter:alpha(opacity:5) !important; }
+
+/* flash the lock+key that are being unlocked */
+.flash-1.unlocking-1 #lock-1, .flash-1.unlocking-1 #key-5,
+.flash-3.unlocking-1 #lock-1, .flash-3.unlocking-1 #key-5,
+.flash-1.unlocking-2 #lock-2, .flash-1.unlocking-2 #key-6,
+.flash-3.unlocking-2 #lock-2, .flash-3.unlocking-2 #key-6,
+.flash-1.unlocking-3 #lock-3, .flash-1.unlocking-3 #key-7,
+.flash-3.unlocking-3 #lock-3, .flash-3.unlocking-3 #key-7,
+.flash-1.unlocking-4 #lock-4, .flash-1.unlocking-4 #key-8,
+.flash-3.unlocking-4 #lock-4, .flash-3.unlocking-4 #key-8 { opacity: .05; filter:alpha(opacity:5); }
+
+.tick-1.free.kong-1 #kong-1 { opacity: .05; filter:alpha(opacity:5); }
+/* kong-4 and kong-5 show #kong-1 but are used in final 2 stages of unlocking */
+.kong-4 #kong-1, .kong-5 #kong-1 { opacity: 1; filter:alpha(opacity:100); }
+
+#dialog
+{
+  display: none;
+  position: absolute;
+  background: rgba(0,10,30, .8);
+  z-index: 100;
+  left: 50%; top: 50%; 
+  margin: -40px 0 0 -300px;
+  max-width: 500px;
+  color: #fff;
+  font: normal normal normal 24px/32px 'Heiti K', 'Helvetica';
+  padding: 20px;
+  border: solid #fff 2px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  -ms-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-box-shadow: 0 0 3px #000;
+  -moz-box-shadow: 0 0 3px #000;
+  -o-box-shadow: 0 0 3px #000;
+  -ms-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  text-align: center;
+}
+
+.iphone #dialog {
+  width: 300px !important;
+  margin-left: -166px;
+  padding: 10px;
+}
+.iphone #splash {
+  width: 480px; height: 320px;
+}
+.iphone #description {
+  width: 480px;
+  top: 217px;
+  font-size: 13px;
+}
+.iphone #title {
+  width: 300px; height: auto;
+  left: 90px;
+  top: 10px;
+}
+.iphone #image {
+  width: 300px; height: auto;
+  left: 70px;
+  top: 58px;
+}
+.iphone #shadow {
+  display: none;
+}
+.iphone body {
+  height: 592px;
+  overflow: hidden;
+}
+.iphone body.splash {
+  height: 100%;
+}
+.iphone #game-and-watch {
+  width: 773px; height: 740px;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 1s ease-out;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(.9) translate(-240px, -10px);
+}
+.ipad #controls > #start {
+  margin-top: 10px;
+}
+.iphone #controls {
+  position: absolute;
+  width: 480px; height: 320px;
+  top: 0; left: 0;
+}
+.iphone #controls #controller {
+  top: auto;
+  bottom: 20px; left: 20px;
+}
+  .iphone #controls #controller {
+    top: auto; left: auto;
+    bottom: 20px; 
+    left: 20px;
+    opacity: .2;
+  }
+  .iphone #controls #jump {
+    top: auto; left: auto;
+    right: 30px;
+    bottom: 35px;
+    opacity: .2;
+  }
+  .iphone #controls #start {
+    top: auto; left: auto;
+    height: 46px;
+    right: 189px;
+    bottom: 6px;
+    opacity: .2;
+  }
+
+.iphone #game-and-watch.viewport-1 {
+  -webkit-transform: scale(.9) translate(-240px, -380px);
+}
+.iphone #game-and-watch.viewport-2 {
+  -webkit-transform: scale(.9) translate(-240px, -320px);
+}
+.iphone #game-and-watch.viewport-3 {
+  -webkit-transform: scale(.9) translate(-240px, -230px);
+}
+.iphone #game-and-watch.viewport-4 {
+  -webkit-transform: scale(.9) translate(-240px, -190px);
+}
+.iphone #game-and-watch.key-1.viewport-5,
+.iphone #game-and-watch.key-2.viewport-5 {
+  -webkit-transform: scale(.9) translate(-240px, -190px);
+}
+.iphone #game-and-watch.viewport-5 {
+  -webkit-transform: scale(.9) translate(-240px, -10px);
+}
+.iphone #game-and-watch.viewport-6 {
+  -webkit-transform: scale(.9) translate(-240px, -10px);
+}
+
+@media all and (orientation: portrait) {
+  /* portrait */
+   #dialog {
+    display: block !important;
+    width: 100%;
+    top: 120px; left: 0;
+    margin: 0 !important;
+    -webkit-border-radius: 0;
+    border-left: none;
+    border-right: none;
+    max-width: inherit;
+  }
+     #dialog span {
+      display: none;
+    }
+     #dialog:after {
+      content: 'Please use your device in landscape mode.';
+    }
+  .iphone #splash {
+    width: 320px; height: inherit;
+  }
+   #description {
+    display: none;
+  }
+  .iphone #title {
+    width: 320px; height: auto;
+    left: -1px; top: 39px;
+  }
+  .iphone #image {
+    width: 320px; height: auto;
+    left: 0; top: 230px;
+  }
+  .iphone #dialog {
+    top: 140px;
+  }
+  .ipad #dialog {
+    top: 700px;
+  }
+  .ipad #title {
+    left: 0;
+  }
+  .ipad #image {
+    left: 40px;
+  }
+}
+

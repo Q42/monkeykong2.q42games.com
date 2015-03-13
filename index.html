@@ -1,0 +1,193 @@
+<!--
+  Monkey Kong II was written by Martin Kool of Q42 and published under the Q42Games label.
+  Check out our other games at q42.nl/games or our blog at q42games.com.
+
+  Follow me on twitter @mrtnkl
+  Follow Q42 on twitter @q42
+  Follow Q42Games on twitter @q42games
+-->
+<!doctype html>
+<html manifest="cache.manifest" class="loading">
+  <head>
+    <title>Monkey Kong II</title>
+    <meta name="description" content="Monkey Kong II is a tribute to the Nintendo Game & Watch classic Donkey Kong II, made by Martin Kool in HTML5 for iPad, iPhone, Chrome, Firefox and other browsers." />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png"/>
+    <style>
+      html.loading body {
+        background: #000;
+      }
+      html.loading body * {
+        display: none;
+      }
+    </style>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bufferloader.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/junior.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/key.js"></script>
+    <script src="js/kong.js"></script>
+    <script src="js/digits.js"></script>
+    <link rel="stylesheet" href="css/dk2.css" type="text/css" />
+    <link rel="stylesheet" href="css/add2home.css" type="text/css" />
+  </head>
+  <body class="splash">
+    <div class="blad blad-top-left"></div>
+    <div class="blad blad-top-right"></div>
+    <div class="blad blad-bottom-left"></div>
+    <div class="blad blad-bottom-right"></div>
+    <div id="splash">
+      <img id="title" src="img/title.png" />
+      <div id="shadow"></div>
+      <img id="image" src="img/monkeys.png" />
+      <p id="description">
+        A tribute to Gunpei Yokoi<br />
+        Brought to Chrome and iOS by Martin Kool<br />
+        Graphics by Richard Lems and Reinier Feijen<br />
+        <br />
+        &copy; 2012 @Q42games
+      </p>
+    </div>
+    <div id="dialog"></div>
+    <div id="controls">
+      <div id="controller">
+        <div id="controller-image"></div>
+        <div class="touch-area" id="touch-area-up"></div>
+        <div class="touch-area" id="touch-area-down"></div>
+        <div class="touch-area" id="touch-area-left"></div>
+        <div class="touch-area" id="touch-area-right"></div>
+      </div>
+      <div class="touch-area" id="jump"></div>
+      <div class="touch-area" id="start"></div>
+    </div>
+    <div id="game-and-watch">
+      <div id="upper-screen">
+        <div class="blueprint"></div>
+        <div class="tile junior" id="junior-13"></div>
+        <div class="tile junior" id="junior-14"></div>
+        <div class="tile junior" id="junior-15"></div>
+        <div class="tile junior" id="junior-16"></div>
+        <div class="tile junior" id="junior-17"></div>
+        <div class="tile junior" id="junior-13-2"></div>
+        <div class="tile junior" id="junior-14-2"></div>
+        <div class="tile junior" id="junior-15-2"></div>
+        <div class="tile junior" id="junior-16-2"></div>
+        <div class="tile junior" id="junior-17-2"></div>
+        <div class="tile junior" id="junior-14-3"></div>
+        <div class="tile junior" id="junior-15-3"></div>
+        <div class="tile junior" id="junior-16-3"></div>
+        <div class="tile junior" id="junior-17-3"></div>
+        <div class="tile junior" id="junior-14-4"></div>
+        <div class="tile junior" id="junior-15-4"></div>
+        <div class="tile junior" id="junior-16-4"></div>
+        <div class="tile junior" id="junior-17-4"></div>
+        <div class="tile" id="snapjaw-2-1"></div>
+        <div class="tile" id="snapjaw-2-2"></div>
+        <div class="tile" id="snapjaw-2-3"></div>
+        <div class="tile" id="snapjaw-2-4"></div>
+        <div class="tile" id="snapjaw-2-5"></div>
+        <div class="tile" id="snapjaw-2-6"></div>
+        <div class="tile" id="snapjaw-2-7"></div>
+        <div class="tile" id="bird-1"></div>
+        <div class="tile" id="bird-2"></div>
+        <div class="tile" id="bird-3"></div>
+        <div class="tile" id="bird-4"></div>
+        <div class="tile" id="bird-5"></div>
+        <div class="tile" id="bird-6"></div>
+        <div class="tile" id="bird-7"></div>
+        <div class="tile" id="bird-8"></div>
+        <div class="tile" id="bird-9"></div>
+        <div class="tile" id="bird-10"></div>
+        <div class="tile" id="bird-11"></div>
+        <div class="tile" id="bird-12"></div>
+        <div class="tile" id="bird-13"></div>
+        <div class="tile" id="bird-14"></div>
+        <div class="tile" id="bird-15"></div>
+        <div class="tile" id="bird-16"></div>
+        <div class="tile" id="kong-1"></div>
+        <div class="tile" id="kong-2"></div>
+        <div class="tile" id="kong-3"></div>
+        <div class="tile" id="lock-1"></div>
+        <div class="tile" id="lock-2"></div>
+        <div class="tile" id="lock-3"></div>
+        <div class="tile" id="lock-4"></div>
+        <div class="tile" id="hand-1"></div>
+        <div class="tile" id="hand-2"></div>
+        <div class="tile" id="key-3"></div>
+        <div class="tile" id="key-4"></div>
+        <div class="tile" id="key-5"></div>
+        <div class="tile" id="key-6"></div>
+        <div class="tile" id="key-7"></div>
+        <div class="tile" id="key-8"></div>
+        <div class="tile" id="hand-1"></div>
+        <div class="tile" id="hand-2"></div>
+        <div class="tile" id="mario"></div>
+      </div>
+      <div id="lower-screen">
+        <div class="blueprint"></div>
+        <div class="tile" id="life-1"></div>
+        <div class="tile" id="life-2"></div>
+        <div class="tile" id="life-3"></div>
+        <div class="tile junior" id="junior-1"></div>
+        <div class="tile junior" id="junior-2"></div>
+        <div class="tile junior" id="junior-3"></div>
+        <div class="tile junior" id="junior-4"></div>
+        <div class="tile junior" id="junior-5"></div>
+        <div class="tile junior" id="junior-6"></div>
+        <div class="tile junior" id="junior-7"></div>
+        <div class="tile junior" id="junior-8"></div>
+        <div class="tile junior" id="junior-9"></div>
+        <div class="tile junior" id="junior-10"></div>
+        <div class="tile junior" id="junior-11"></div>
+        <div class="tile junior" id="junior-12"></div>
+        <div class="tile junior" id="junior-1-2"></div>
+        <div class="tile junior" id="junior-2-2"></div>
+        <div class="tile junior" id="junior-3-2"></div>
+        <div class="tile junior" id="junior-4-2"></div>
+        <div class="tile junior" id="junior-8-2"></div>
+        <div class="tile junior" id="junior-9-2"></div>
+        <div class="tile junior" id="junior-10-2"></div>
+        <div class="tile" id="snapjaw-1-1"></div>
+        <div class="tile" id="snapjaw-1-2"></div>
+        <div class="tile" id="snapjaw-1-3"></div>
+        <div class="tile" id="snapjaw-1-4"></div>
+        <div class="tile" id="snapjaw-1-5"></div>
+        <div class="tile" id="snapjaw-1-6"></div>
+        <div class="tile" id="snapjaw-1-7"></div>
+        <div class="tile" id="spark-1-1"></div>
+        <div class="tile" id="spark-1-2"></div>
+        <div class="tile" id="spark-1-3"></div>
+        <div class="tile" id="spark-1-4"></div>
+        <div class="tile" id="spark-1-5"></div>
+        <div class="tile" id="spark-1-6"></div>
+        <div class="tile" id="spark-1-7"></div>
+        <div class="tile" id="spark-2-1"></div>
+        <div class="tile" id="spark-2-2"></div>
+        <div class="tile" id="spark-2-3"></div>
+        <div class="tile" id="spark-2-4"></div>
+        <div class="tile" id="spark-2-5"></div>
+        <div class="tile" id="key-1"></div>
+        <div class="tile" id="key-2"></div>
+        <div class="tile digit" id="digit-1000"></div>
+        <div class="tile digit" id="digit-100"></div>
+        <div class="tile digit" id="digit-10"></div>
+        <div class="tile digit" id="digit-1"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var addToHomeConfig = {
+        animationIn: 'bubble',
+        animationOut: 'drop',
+        startDelay: 1000,
+        lifespan: 60 * 60 * 1000,
+        expire: 0,
+        touchIcon: true
+      };
+    </script>
+    <script src="js/add2home.js"></script>
+  </body>
+</html>
